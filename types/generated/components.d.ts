@@ -170,6 +170,19 @@ export interface CoinCodeBlockCoinCodeBlock extends Schema.Component {
   };
 }
 
+export interface ChartPercentagesChartColorPercentages
+  extends Schema.Component {
+  collectionName: 'components_chart_percentages_chart_color_percentages';
+  info: {
+    displayName: 'ChartColorPercentages';
+  };
+  attributes: {
+    Color: Attribute.String;
+    PercentageTitle: Attribute.String;
+    Percentage: Attribute.Integer;
+  };
+}
+
 export interface BlogPostsBlogPosts extends Schema.Component {
   collectionName: 'components_blog_posts_blog_posts';
   info: {
@@ -207,19 +220,6 @@ export interface AboutSectionAboutSection extends Schema.Component {
   };
 }
 
-export interface ChartPercentagesChartColorPercentages
-  extends Schema.Component {
-  collectionName: 'components_chart_percentages_chart_color_percentages';
-  info: {
-    displayName: 'ChartColorPercentages';
-  };
-  attributes: {
-    Color: Attribute.String;
-    PercentageTitle: Attribute.String;
-    Percentage: Attribute.Integer;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -236,10 +236,10 @@ declare module '@strapi/types' {
       'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
+      'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
       'blog-posts.blog-posts': BlogPostsBlogPosts;
       'background-gif.background-video': BackgroundGifBackgroundVideo;
       'about-section.about-section': AboutSectionAboutSection;
-      'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
     }
   }
 }

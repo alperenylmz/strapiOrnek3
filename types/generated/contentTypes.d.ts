@@ -794,6 +794,7 @@ export interface ApiBlogBlog extends Schema.SingleType {
     singularName: 'blog';
     pluralName: 'blogs';
     displayName: 'Blog';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,6 +803,7 @@ export interface ApiBlogBlog extends Schema.SingleType {
     Title: Attribute.String;
     Description: Attribute.Text;
     BlogPosts: Attribute.Component<'blog-posts.blog-posts', true>;
+    adasd: Attribute.Blocks;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -4,6 +4,8 @@ import ReactQuill from 'react-quill'; // Rich Text Editor
 import 'react-quill/dist/quill.snow.css'; // Quill styles
 import Modal from 'react-modal'; // Modal component for displaying rich text editor
 import pluginId from '../../pluginId';
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import RichText from 'strapi-plugin-rich-text/admin/src/components/RichText'
 
 const modules = {
   toolbar: [
