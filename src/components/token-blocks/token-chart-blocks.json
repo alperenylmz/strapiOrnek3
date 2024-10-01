@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_token_blocks_token_chart_blocks",
+  "info": {
+    "displayName": "TokenChartBlocks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Number": {
+      "type": "string"
+    },
+    "Change": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

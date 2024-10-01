@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_chart_percentages_chart_color_percentages",
+  "info": {
+    "displayName": "ChartColorPercentages"
+  },
+  "options": {},
+  "attributes": {
+    "Color": {
+      "type": "string"
+    },
+    "PercentageTitle": {
+      "type": "string"
+    },
+    "Percentage": {
+      "type": "integer"
+    }
+  }
+}

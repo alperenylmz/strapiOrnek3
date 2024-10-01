@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_repeatable_text_list_views",
+  "info": {
+    "displayName": "ListView"
+  },
+  "options": {},
+  "attributes": {
+    "Substances": {
+      "type": "text"
+    },
+    "isDone": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

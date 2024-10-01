@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_coin_sites_coin_sites",
+  "info": {
+    "displayName": "coinSites",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "coinPlaces": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

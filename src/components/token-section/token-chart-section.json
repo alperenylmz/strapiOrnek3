@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_token_section_token_chart_sections",
+  "info": {
+    "displayName": "TokenChartSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CoinLinks": {
+      "displayName": "CoinPlaceLinks",
+      "type": "component",
+      "repeatable": true,
+      "component": "coin-place-link.coin-place-links"
+    },
+    "ChartImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "TokenChartBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "token-blocks.token-chart-blocks"
+    },
+    "ColorPercentages": {
+      "displayName": "ChartColorPercentages",
+      "type": "component",
+      "repeatable": true,
+      "component": "chart-percentages.chart-color-percentages"
+    }
+  }
+}

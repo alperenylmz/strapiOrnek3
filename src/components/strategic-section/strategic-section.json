@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_strategic_section_strategic_sections",
+  "info": {
+    "displayName": "StrategicSection"
+  },
+  "options": {},
+  "attributes": {
+    "StrategicTitle": {
+      "type": "string"
+    },
+    "StrategicDescription": {
+      "type": "blocks"
+    },
+    "StrategicBlock": {
+      "displayName": "StrategicBlock",
+      "type": "component",
+      "repeatable": true,
+      "component": "strategic-section.strategic-block"
+    }
+  }
+}

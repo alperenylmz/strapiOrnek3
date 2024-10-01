@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_roadmap_over_the_years_roadmap_over_the_years",
+  "info": {
+    "displayName": "RoadmapOverTheYears",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Year": {
+      "type": "biginteger"
+    },
+    "List": {
+      "type": "component",
+      "repeatable": true,
+      "component": "roadmap-list.list-view"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_background_gif_background_videos",
+  "info": {
+    "displayName": "backgroundVideo"
+  },
+  "options": {},
+  "attributes": {
+    "brnBackgroundGif": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

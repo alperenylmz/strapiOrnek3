@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_coin_code_block_coin_code_blocks",
+  "info": {
+    "displayName": "CoinCodeBlock"
+  },
+  "options": {},
+  "attributes": {
+    "Number": {
+      "type": "integer"
+    },
+    "DecimalText": {
+      "type": "string"
+    },
+    "Code": {
+      "type": "text"
+    }
+  }
+}

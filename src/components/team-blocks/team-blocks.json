@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_team_blocks_team_blocks",
+  "info": {
+    "displayName": "TeamBlocks",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "NameSurname": {
+      "type": "text"
+    },
+    "Position": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

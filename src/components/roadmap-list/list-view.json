@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_roadmap_list_list_views",
+  "info": {
+    "displayName": "ListView",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Quarter": {
+      "type": "integer"
+    },
+    "List": {
+      "type": "component",
+      "repeatable": true,
+      "component": "repeatable-text.list-view"
+    }
+  }
+}

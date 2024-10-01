@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_about_section_about_sections",
+  "info": {
+    "displayName": "About Section"
+  },
+  "options": {},
+  "attributes": {
+    "CoinSites": {
+      "displayName": "coinSites",
+      "type": "component",
+      "repeatable": true,
+      "component": "coin-sites.coin-sites"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "TotalSupply": {
+      "type": "integer"
+    },
+    "MaxSupply": {
+      "type": "integer"
+    },
+    "LineGraph": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
