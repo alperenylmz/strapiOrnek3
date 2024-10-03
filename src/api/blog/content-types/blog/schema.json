@@ -24,8 +24,10 @@
       "repeatable": true,
       "component": "blog-posts.blog-posts"
     },
-    "adasd": {
-      "type": "blocks"
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
     }
   }
 }

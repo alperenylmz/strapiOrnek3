@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blog_details_blog_details",
+  "info": {
+    "displayName": "BlogDetail"
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "blocks"
+    },
+    "PostImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

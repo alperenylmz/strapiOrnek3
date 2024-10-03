@@ -1,19 +1,24 @@
 {
   "collectionName": "components_partner_section_our_partners_blocks",
   "info": {
-    "displayName": "OurPartnersBlock"
+    "displayName": "OurPartnersBlock",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "PartnerIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "PartnerDescription": {
       "type": "blocks"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }

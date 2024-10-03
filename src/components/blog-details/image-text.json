@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blog_details_image_texts",
+  "info": {
+    "displayName": "Image-Text"
+  },
+  "options": {},
+  "attributes": {
+    "Description": {
+      "type": "blocks"
+    },
+    "PostImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

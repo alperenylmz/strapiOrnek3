@@ -1,19 +1,24 @@
 {
   "collectionName": "components_coin_place_link_coin_place_links",
   "info": {
-    "displayName": "CoinPlaceLinks"
+    "displayName": "CoinPlaceLinks",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "PlaceImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "url": {
       "type": "text"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

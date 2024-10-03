@@ -1,22 +1,27 @@
 {
   "collectionName": "components_blog_posts_blog_posts",
   "info": {
-    "displayName": "BlogPosts"
+    "displayName": "BlogPosts",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "PostTitle": {
       "type": "text"
     },
     "PostDescription": {
       "type": "blocks"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
