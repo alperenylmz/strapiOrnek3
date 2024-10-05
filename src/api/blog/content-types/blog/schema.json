@@ -23,11 +23,6 @@
       "type": "component",
       "repeatable": true,
       "component": "blog-posts.blog-posts"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "Title",
-      "required": true
     }
   }
 }

@@ -803,7 +803,6 @@ export interface ApiBlogBlog extends Schema.SingleType {
     Title: Attribute.String;
     Description: Attribute.Text;
     BlogPosts: Attribute.Component<'blog-posts.blog-posts', true>;
-    slug: Attribute.UID<'api::blog.blog', 'Title'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -827,9 +826,13 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   };
   attributes: {
     Title: Attribute.String;
-    Description: Attribute.Blocks;
     slug: Attribute.UID<'api::blog-post.blog-post', 'Title'>;
-    BlogDetail: Attribute.Component<'blog-details.blog-detail', true>;
+    Description: Attribute.RichText;
+    miniDescription: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    coverImage: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

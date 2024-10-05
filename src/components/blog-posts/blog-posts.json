@@ -17,11 +17,9 @@
     "PostTitle": {
       "type": "text"
     },
-    "PostDescription": {
-      "type": "blocks"
-    },
-    "url": {
-      "type": "string"
+    "miniDescription": {
+      "type": "text",
+      "maxLength": 80
     }
   }
 }

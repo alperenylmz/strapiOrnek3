@@ -15,18 +15,23 @@
     "Title": {
       "type": "string"
     },
-    "Description": {
-      "type": "blocks"
-    },
     "slug": {
       "type": "uid",
       "targetField": "Title"
     },
-    "BlogDetail": {
-      "displayName": "BlogDetail",
-      "type": "component",
-      "repeatable": true,
-      "component": "blog-details.blog-detail"
+    "Description": {
+      "type": "richtext"
+    },
+    "miniDescription": {
+      "type": "text",
+      "maxLength": 80
+    },
+    "coverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

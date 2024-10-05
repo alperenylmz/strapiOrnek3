@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Modal from "react-modal"; // Modal component for displaying rich text editor
 import pluginId from "../../pluginId";
-const { CKEditor } = require("@ckeditor/ckeditor5-react");
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic"; 
-import * as DOMPurify from 'dompurify';
+//const { CKEditor } = require("@ckeditor/ckeditor5-react");
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import * as DOMPurify from "dompurify";
 import HTMLReactParser from "html-react-parser";
-import '@ckeditor/ckeditor5-style/theme/style.css';
+import "@ckeditor/ckeditor5-style/theme/style.css";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 
 const HomePage = () => {
   const [selectedUsers, setSelectedUsers] = useState([]);
@@ -14,8 +15,8 @@ const HomePage = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [pageSize, setPageSize] = useState(10);
 
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-  const [emailContent, setEmailContent] = useState(''); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [emailContent, setEmailContent] = useState("");
 
   const sendBulkEmail = async () => {
     console.log("Sending emails to:", selectedUsers);
@@ -319,8 +320,7 @@ const HomePage = () => {
           onChange={(event, editor) => {
             const data = editor.getData();
             console.log("Editor data:", data);
-            const clean = DOMPurify.sanitize(data);
-            setEmailContent(clean);
+            setEmailContent(data);
           }}
         />
 
@@ -333,7 +333,11 @@ const HomePage = () => {
           }}
         >
           <h3>Preview:</h3>
-          <div>{HTMLReactParser(`<h1>berat</h1>`)}</div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(emailContent),
+            }}
+          ></div>
         </div>
         <button
           style={{
