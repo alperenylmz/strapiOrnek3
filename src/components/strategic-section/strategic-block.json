@@ -1,22 +1,24 @@
 {
   "collectionName": "components_strategic_section_strategic_blocks",
   "info": {
-    "displayName": "StrategicBlock"
+    "displayName": "StrategicBlock",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "StrategicIcon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "StrategicTitle": {
       "type": "string"
     },
     "StrategicDescription": {
-      "type": "blocks"
+      "type": "text"
     }
   }
 }

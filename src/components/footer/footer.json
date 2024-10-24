@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_footer_footers",
+  "info": {
+    "displayName": "Footer"
+  },
+  "options": {},
+  "attributes": {
+    "AvailableOn": {
+      "type": "component",
+      "repeatable": true,
+      "component": "coin-place-link.coin-place-links"
+    }
+  }
+}

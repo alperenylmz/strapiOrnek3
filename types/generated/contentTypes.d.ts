@@ -788,6 +788,41 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiActualTokenActualToken extends Schema.SingleType {
+  collectionName: 'actual_tokens';
+  info: {
+    singularName: 'actual-token';
+    pluralName: 'actual-tokens';
+    displayName: 'ActualToken';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    StrategicPriorities: Attribute.Component<
+      'strategic-section.strategic-block',
+      true
+    >;
+    ListedOn: Attribute.Component<'listedon.listed-on', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::actual-token.actual-token',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::actual-token.actual-token',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBlogBlog extends Schema.SingleType {
   collectionName: 'blogs';
   info: {
@@ -847,6 +882,37 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
       'oneToOne',
       'admin::user'
     > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Home';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Projects: Attribute.Component<'projects.projects', true>;
+    Team: Attribute.Component<'team-blocks.team-blocks', true>;
+    Partners: Attribute.Component<'partner-section.our-partners-block', true>;
+    Roadmap: Attribute.Component<
+      'roadmap-over-the-years.roadmap-over-the-years',
+      true
+    >;
+    Social: Attribute.Component<'social-handles.social-handles', true>;
+    Footer: Attribute.Component<'footer.footer'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1014,6 +1080,48 @@ export interface ApiTokenToken extends Schema.SingleType {
   };
 }
 
+export interface ApiTokenAllocationTokenAllocation
+  extends Schema.CollectionType {
+  collectionName: 'token_allocations';
+  info: {
+    singularName: 'token-allocation';
+    pluralName: 'token-allocations';
+    displayName: 'TokenAllocation';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Color: Attribute.String;
+    Percentage: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 100;
+        },
+        number
+      >;
+    Description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::token-allocation.token-allocation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::token-allocation.token-allocation',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1032,13 +1140,16 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::actual-token.actual-token': ApiActualTokenActualToken;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
+      'api::home.home': ApiHomeHome;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::roadmap.roadmap': ApiRoadmapRoadmap;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
       'api::team.team': ApiTeamTeam;
       'api::token.token': ApiTokenToken;
+      'api::token-allocation.token-allocation': ApiTokenAllocationTokenAllocation;
     }
   }
 }

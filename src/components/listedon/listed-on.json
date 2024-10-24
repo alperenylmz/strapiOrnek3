@@ -1,24 +1,27 @@
 {
-  "collectionName": "components_partner_section_our_partners_blocks",
+  "collectionName": "components_listedon_listed_ons",
   "info": {
-    "displayName": "OurPartnersBlock",
+    "displayName": "ListedOn",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "PartnerIcon": {
+    "Image": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos",
+        "audios"
       ]
+    },
+    "Description": {
+      "type": "text"
     },
     "url": {
       "type": "string"
-    },
-    "PartnerDescription": {
-      "type": "text"
     }
   }
 }

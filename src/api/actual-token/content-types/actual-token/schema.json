@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "actual_tokens",
+  "info": {
+    "singularName": "actual-token",
+    "pluralName": "actual-tokens",
+    "displayName": "ActualToken",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "StrategicPriorities": {
+      "type": "component",
+      "repeatable": true,
+      "component": "strategic-section.strategic-block"
+    },
+    "ListedOn": {
+      "displayName": "ListedOn",
+      "type": "component",
+      "repeatable": true,
+      "component": "listedon.listed-on"
+    }
+  }
+}

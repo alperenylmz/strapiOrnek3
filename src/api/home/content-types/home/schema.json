@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Projects": {
+      "displayName": "projects",
+      "type": "component",
+      "repeatable": true,
+      "component": "projects.projects"
+    },
+    "Team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "team-blocks.team-blocks"
+    },
+    "Partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "partner-section.our-partners-block"
+    },
+    "Roadmap": {
+      "type": "component",
+      "repeatable": true,
+      "component": "roadmap-over-the-years.roadmap-over-the-years"
+    },
+    "Social": {
+      "displayName": "SocialHandles",
+      "type": "component",
+      "repeatable": true,
+      "component": "social-handles.social-handles"
+    },
+    "Footer": {
+      "displayName": "Footer",
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.footer"
+    }
+  }
+}

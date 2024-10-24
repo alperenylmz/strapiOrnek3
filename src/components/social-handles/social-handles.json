@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_social_handles_social_handles",
+  "info": {
+    "displayName": "SocialHandles",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "audios",
+        "videos"
+      ]
+    },
+    "Followers": {
+      "type": "string"
+    }
+  }
+}
