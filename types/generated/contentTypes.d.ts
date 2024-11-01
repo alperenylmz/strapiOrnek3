@@ -868,6 +868,7 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
         maxLength: 80;
       }>;
     coverImage: Attribute.Media<'images'>;
+    Seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

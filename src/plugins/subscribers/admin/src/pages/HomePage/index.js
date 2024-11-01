@@ -5,8 +5,9 @@ import pluginId from "../../pluginId";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import * as DOMPurify from "dompurify";
 import HTMLReactParser from "html-react-parser";
-import "@ckeditor/ckeditor5-style/theme/style.css";
+import 'ckeditor5/ckeditor5.css'
 import { CKEditor } from "@ckeditor/ckeditor5-react";
+import CKEditorProvider from "../../../../../strapi-plugin-ckeditor/admin/src/components/CKEditorProvider";
 
 const HomePage = () => {
   const [selectedUsers, setSelectedUsers] = useState([]);
@@ -314,14 +315,15 @@ const HomePage = () => {
         ariaHideApp={false}
       >
         <h2 style={{ marginBottom: "10px" }}>Edit Email Content</h2>
+        {/* BURADA CKEDITOR PLUGIN EKLENECEK  */}
+
         <CKEditor
-          editor={ClassicEditor}
-          data={emailContent}
-          onChange={(event, editor) => {
-            const data = editor.getData();
-            console.log("Editor data:", data);
-            setEmailContent(data);
-          }}
+            editor={ClassicEditor}
+            data={emailContent}
+            onChange={(event, editor) => {
+              const data = editor.getData();
+              setEmailContent(data);
+            }}
         />
 
         {/* İçeriği görüntülemek için burayı ekleyin */}
