@@ -1,8 +1,13 @@
 import { prefixPluginTranslations } from '@strapi/helper-plugin';
+// @ts-ignore
 import pluginPkg from '../../package.json';
 import pluginId from './pluginId';
 import Initializer from './components/Initializer';
 import PluginIcon from './components/PluginIcon';
+// //import './assets/global.css';
+import "@ckeditor/ckeditor5-style/theme/style.css";  
+
+
 
 const name = pluginPkg.strapi.name;
 

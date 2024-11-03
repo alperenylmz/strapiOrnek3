@@ -33,6 +33,20 @@ export interface TokenBlocksTokenChartBlocks extends Schema.Component {
   };
 }
 
+export interface TeamBlocksTeamBlocks extends Schema.Component {
+  collectionName: 'components_team_blocks_team_blocks';
+  info: {
+    displayName: 'TeamBlocks';
+    description: '';
+  };
+  attributes: {
+    Photo: Attribute.Media<'images'>;
+    NameSurname: Attribute.Text;
+    Position: Attribute.Text;
+    url: Attribute.String;
+  };
+}
+
 export interface StrategicSectionStrategicSection extends Schema.Component {
   collectionName: 'components_strategic_section_strategic_sections';
   info: {
@@ -97,20 +111,6 @@ export interface SharedSeo extends Schema.Component {
     metaDescription: Attribute.String;
     SharedImage: Attribute.Component<'shared.share-image'>;
     keywords: Attribute.String;
-  };
-}
-
-export interface TeamBlocksTeamBlocks extends Schema.Component {
-  collectionName: 'components_team_blocks_team_blocks';
-  info: {
-    displayName: 'TeamBlocks';
-    description: '';
-  };
-  attributes: {
-    Photo: Attribute.Media<'images'>;
-    NameSurname: Attribute.Text;
-    Position: Attribute.Text;
-    url: Attribute.String;
   };
 }
 
@@ -332,12 +332,12 @@ declare module '@strapi/types' {
     export interface Components {
       'token-section.token-chart-section': TokenSectionTokenChartSection;
       'token-blocks.token-chart-blocks': TokenBlocksTokenChartBlocks;
+      'team-blocks.team-blocks': TeamBlocksTeamBlocks;
       'strategic-section.strategic-section': StrategicSectionStrategicSection;
       'strategic-section.strategic-block': StrategicSectionStrategicBlock;
       'social-handles.social-handles': SocialHandlesSocialHandles;
       'shared.share-image': SharedShareImage;
       'shared.seo': SharedSeo;
-      'team-blocks.team-blocks': TeamBlocksTeamBlocks;
       'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
       'roadmap-list.list-view': RoadmapListListView;
       'repeatable-text.list-view': RepeatableTextListView;
