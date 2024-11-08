@@ -26,7 +26,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     config: {
       deployHook:
-        "https://api.vercel.com/v1/integrations/deploy/prj_<deploy-hook>",
+        "https://api.vercel.com/v1/integrations/deploy/prj_V6788XvajXzMBSLSIXkMGZLQuw18/G8ZTJkW1I2",
       apiToken: "4OMSZpJJ35pAUuGeierkfKx7",
       //appFilter: "your-app-name-on-vercel",
       //teamFilter: "your-team-id-on-vercel",

@@ -3,6 +3,10 @@
       "env": {
         "NODE_VERSION": "18.x"
       }
-    }
+    },
+    "scripts": {
+    "build": "strapi build",
+    "start": "strapi start"
+  }
   }
   
