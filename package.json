@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "deploy": "strapi deploy"
   },
   "devDependencies": {},
   "dependencies": {
@@ -43,15 +44,7 @@
     "strapi-plugin-rich-text": "^1.2.2",
     "strapi-plugin-vercel-deploy": "^1.4.0",
     "strapi-tiptap-editor": "^0.9.13",
-    "styled-components": "5.3.3",
-    "@babel/runtime": ">=7.11.0",
-    "@codemirror/state": ">=6.0.0",
-    "@codemirror/theme-one-dark": ">=6.0.0",
-    "@codemirror/view": ">=6.0.0",
-    "react-is": ">=16.8.0",
-    "@babel/core": "^7.0.0-0",
-    "@lezer/common": "^1.0.0",
-    "@tiptap/pm": "^2.7.0"
+    "styled-components": "5.3.3"
   },
   "author": {
     "name": "A Strapi developer"
@@ -61,7 +54,8 @@
   },
   "engines": {
     "node": ">=14.0.0 <=18.x.x",
-    "yarn": ">=1.22.0"
+    "npm": ">=6.0.0"
   },
   "license": "MIT"
+ 
 }
