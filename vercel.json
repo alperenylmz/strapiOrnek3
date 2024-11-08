@@ -1,12 +1,19 @@
 {
-    "build": {
-      "env": {
-        "NODE_VERSION": "18.x"
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node"
       }
+    ],
+    "env": {
+      "NODE_VERSION": "18.x"
     },
-    "scripts": {
-    "build": "strapi build",
-    "start": "strapi start"
-  }
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
   }
   
