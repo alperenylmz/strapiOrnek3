@@ -326,22 +326,6 @@ const HomePage = () => {
             setEmailContent(data);
           }}
         /> */}
-
-        {/* İçeriği görüntülemek için burayı ekleyin */}
-        <div
-          style={{
-            marginTop: "20px",
-            border: "1px solid #ccc",
-            padding: "10px",
-          }}
-        >
-          <h3>Preview:</h3>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: DOMPurify.sanitize(emailContent),
-            }}
-          ></div>
-        </div>
         <button
           style={{
             marginTop: "20px",

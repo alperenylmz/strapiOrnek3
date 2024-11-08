@@ -952,6 +952,43 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiPatchNotePatchNote extends Schema.CollectionType {
+  collectionName: 'patch_notes';
+  info: {
+    singularName: 'patch-note';
+    pluralName: 'patch-notes';
+    displayName: 'PatchNote';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    slug: Attribute.UID<'api::patch-note.patch-note', 'Title'> &
+      Attribute.Required;
+    Description: Attribute.Blocks;
+    miniDescription: Attribute.Text;
+    coverImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::patch-note.patch-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::patch-note.patch-note',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRoadmapRoadmap extends Schema.SingleType {
   collectionName: 'roadmaps';
   info: {
@@ -1146,6 +1183,7 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::home.home': ApiHomeHome;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::patch-note.patch-note': ApiPatchNotePatchNote;
       'api::roadmap.roadmap': ApiRoadmapRoadmap;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
       'api::team.team': ApiTeamTeam;

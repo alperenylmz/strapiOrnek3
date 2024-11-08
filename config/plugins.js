@@ -25,4 +25,7 @@ module.exports = ({ env }) => ({
     enabled: true,
     resolve: "./src/plugins/strapi-plugin-ckeditor"
   },
+  "vercel-deploy": {
+    enabled: true,
+  },
 });

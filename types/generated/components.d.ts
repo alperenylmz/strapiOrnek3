@@ -192,19 +192,6 @@ export interface PartnerSectionOurPartnersBlock extends Schema.Component {
   };
 }
 
-export interface ListedonListedOn extends Schema.Component {
-  collectionName: 'components_listedon_listed_ons';
-  info: {
-    displayName: 'ListedOn';
-    description: '';
-  };
-  attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Text;
-    url: Attribute.String;
-  };
-}
-
 export interface FooterFooter extends Schema.Component {
   collectionName: 'components_footer_footers';
   info: {
@@ -212,6 +199,19 @@ export interface FooterFooter extends Schema.Component {
   };
   attributes: {
     AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
+  };
+}
+
+export interface CoinPlaceLinkCoinPlaceLinks extends Schema.Component {
+  collectionName: 'components_coin_place_link_coin_place_links';
+  info: {
+    displayName: 'CoinPlaceLinks';
+    description: '';
+  };
+  attributes: {
+    PlaceImage: Attribute.Media<'images'>;
+    url: Attribute.Text;
+    name: Attribute.String;
   };
 }
 
@@ -226,16 +226,16 @@ export interface CoinSitesCoinSites extends Schema.Component {
   };
 }
 
-export interface CoinPlaceLinkCoinPlaceLinks extends Schema.Component {
-  collectionName: 'components_coin_place_link_coin_place_links';
+export interface ListedonListedOn extends Schema.Component {
+  collectionName: 'components_listedon_listed_ons';
   info: {
-    displayName: 'CoinPlaceLinks';
+    displayName: 'ListedOn';
     description: '';
   };
   attributes: {
-    PlaceImage: Attribute.Media<'images'>;
-    url: Attribute.Text;
-    name: Attribute.String;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Description: Attribute.Text;
+    url: Attribute.String;
   };
 }
 
@@ -344,10 +344,10 @@ declare module '@strapi/types' {
       'projects.projects': ProjectsProjects;
       'partner-section.partner-section': PartnerSectionPartnerSection;
       'partner-section.our-partners-block': PartnerSectionOurPartnersBlock;
-      'listedon.listed-on': ListedonListedOn;
       'footer.footer': FooterFooter;
-      'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
+      'coin-sites.coin-sites': CoinSitesCoinSites;
+      'listedon.listed-on': ListedonListedOn;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
       'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
       'blog-posts.blog-posts': BlogPostsBlogPosts;
