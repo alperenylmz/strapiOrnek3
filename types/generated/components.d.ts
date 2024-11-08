@@ -150,6 +150,20 @@ export interface RepeatableTextListView extends Schema.Component {
   };
 }
 
+export interface ProjectsProjects extends Schema.Component {
+  collectionName: 'components_projects_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Tags: Attribute.String;
+    Link: Attribute.String;
+  };
+}
+
 export interface PartnerSectionPartnerSection extends Schema.Component {
   collectionName: 'components_partner_section_partner_sections';
   info: {
@@ -178,30 +192,6 @@ export interface PartnerSectionOurPartnersBlock extends Schema.Component {
   };
 }
 
-export interface ProjectsProjects extends Schema.Component {
-  collectionName: 'components_projects_projects';
-  info: {
-    displayName: 'projects';
-  };
-  attributes: {
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Tags: Attribute.String;
-    Link: Attribute.String;
-  };
-}
-
-export interface FooterFooter extends Schema.Component {
-  collectionName: 'components_footer_footers';
-  info: {
-    displayName: 'Footer';
-  };
-  attributes: {
-    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
-  };
-}
-
 export interface ListedonListedOn extends Schema.Component {
   collectionName: 'components_listedon_listed_ons';
   info: {
@@ -212,6 +202,16 @@ export interface ListedonListedOn extends Schema.Component {
     Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Description: Attribute.Text;
     url: Attribute.String;
+  };
+}
+
+export interface FooterFooter extends Schema.Component {
+  collectionName: 'components_footer_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
   };
 }
 
@@ -341,11 +341,11 @@ declare module '@strapi/types' {
       'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
       'roadmap-list.list-view': RoadmapListListView;
       'repeatable-text.list-view': RepeatableTextListView;
+      'projects.projects': ProjectsProjects;
       'partner-section.partner-section': PartnerSectionPartnerSection;
       'partner-section.our-partners-block': PartnerSectionOurPartnersBlock;
-      'projects.projects': ProjectsProjects;
-      'footer.footer': FooterFooter;
       'listedon.listed-on': ListedonListedOn;
+      'footer.footer': FooterFooter;
       'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
