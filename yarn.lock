@@ -604,7 +604,7 @@
     "@ckeditor/ckeditor5-engine" "43.3.0"
     ckeditor5 "43.3.0"
 
-"@ckeditor/ckeditor5-react@^9.1.0", "@ckeditor/ckeditor5-react@^9.3.1":
+"@ckeditor/ckeditor5-react@^9.3.1":
   version "9.3.1"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-react/-/ckeditor5-react-9.3.1.tgz#5ed94789eb5d26bf8d185185c7dfcc57f2bfb97d"
   integrity sha512-2lc1ICGCOZ0loC6DeMFwhkhrodLYUsOnC2wdgMiaXnEWRI/fU0SWBAoLbsMH7i6zpq29s+ZWMEImRVbly8SmEA==

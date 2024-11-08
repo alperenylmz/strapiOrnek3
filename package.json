@@ -56,8 +56,6 @@
     "node": ">=14.0.0 <=18.x.x",
     "npm": ">=6.0.0"
   },
-  "license": "MIT",
-  "workspaces": [
-    "./src/plugins/strapi-plugin-ckeditor"
-  ]
+  "license": "MIT"
+ 
 }

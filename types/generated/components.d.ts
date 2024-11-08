@@ -47,20 +47,6 @@ export interface TeamBlocksTeamBlocks extends Schema.Component {
   };
 }
 
-export interface SocialHandlesSocialHandles extends Schema.Component {
-  collectionName: 'components_social_handles_social_handles';
-  info: {
-    displayName: 'SocialHandles';
-    description: '';
-  };
-  attributes: {
-    name: Attribute.String;
-    url: Attribute.String;
-    Icon: Attribute.Media<'images' | 'files' | 'audios' | 'videos'>;
-    Followers: Attribute.String;
-  };
-}
-
 export interface StrategicSectionStrategicSection extends Schema.Component {
   collectionName: 'components_strategic_section_strategic_sections';
   info: {
@@ -86,6 +72,20 @@ export interface StrategicSectionStrategicBlock extends Schema.Component {
     StrategicIcon: Attribute.Media<'images'>;
     StrategicTitle: Attribute.String;
     StrategicDescription: Attribute.Text;
+  };
+}
+
+export interface SocialHandlesSocialHandles extends Schema.Component {
+  collectionName: 'components_social_handles_social_handles';
+  info: {
+    displayName: 'SocialHandles';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+    Icon: Attribute.Media<'images' | 'files' | 'audios' | 'videos'>;
+    Followers: Attribute.String;
   };
 }
 
@@ -150,20 +150,6 @@ export interface RepeatableTextListView extends Schema.Component {
   };
 }
 
-export interface ProjectsProjects extends Schema.Component {
-  collectionName: 'components_projects_projects';
-  info: {
-    displayName: 'projects';
-  };
-  attributes: {
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Tags: Attribute.String;
-    Link: Attribute.String;
-  };
-}
-
 export interface PartnerSectionPartnerSection extends Schema.Component {
   collectionName: 'components_partner_section_partner_sections';
   info: {
@@ -192,16 +178,17 @@ export interface PartnerSectionOurPartnersBlock extends Schema.Component {
   };
 }
 
-export interface ListedonListedOn extends Schema.Component {
-  collectionName: 'components_listedon_listed_ons';
+export interface ProjectsProjects extends Schema.Component {
+  collectionName: 'components_projects_projects';
   info: {
-    displayName: 'ListedOn';
-    description: '';
+    displayName: 'projects';
   };
   attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
     Description: Attribute.Text;
-    url: Attribute.String;
+    Tags: Attribute.String;
+    Link: Attribute.String;
   };
 }
 
@@ -212,6 +199,19 @@ export interface FooterFooter extends Schema.Component {
   };
   attributes: {
     AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
+  };
+}
+
+export interface ListedonListedOn extends Schema.Component {
+  collectionName: 'components_listedon_listed_ons';
+  info: {
+    displayName: 'ListedOn';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Description: Attribute.Text;
+    url: Attribute.String;
   };
 }
 
@@ -333,19 +333,19 @@ declare module '@strapi/types' {
       'token-section.token-chart-section': TokenSectionTokenChartSection;
       'token-blocks.token-chart-blocks': TokenBlocksTokenChartBlocks;
       'team-blocks.team-blocks': TeamBlocksTeamBlocks;
-      'social-handles.social-handles': SocialHandlesSocialHandles;
       'strategic-section.strategic-section': StrategicSectionStrategicSection;
       'strategic-section.strategic-block': StrategicSectionStrategicBlock;
+      'social-handles.social-handles': SocialHandlesSocialHandles;
       'shared.share-image': SharedShareImage;
       'shared.seo': SharedSeo;
       'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
       'roadmap-list.list-view': RoadmapListListView;
       'repeatable-text.list-view': RepeatableTextListView;
-      'projects.projects': ProjectsProjects;
       'partner-section.partner-section': PartnerSectionPartnerSection;
       'partner-section.our-partners-block': PartnerSectionOurPartnersBlock;
-      'listedon.listed-on': ListedonListedOn;
+      'projects.projects': ProjectsProjects;
       'footer.footer': FooterFooter;
+      'listedon.listed-on': ListedonListedOn;
       'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
