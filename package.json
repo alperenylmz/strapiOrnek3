@@ -41,6 +41,7 @@
     "react-modal": "^3.16.1",
     "react-quill": "^2.0.0",
     "react-router-dom": "5.3.4",
+    "sharp": "^0.33.5",
     "strapi-plugin-rich-text": "^1.2.2",
     "strapi-plugin-vercel-deploy": "^1.4.0",
     "strapi-tiptap-editor": "^0.9.13",
@@ -57,5 +58,4 @@
     "npm": ">=6.0.0"
   },
   "license": "MIT"
- 
 }

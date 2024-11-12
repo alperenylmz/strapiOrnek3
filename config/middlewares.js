@@ -20,4 +20,8 @@ module.exports = [
       },
     },
   },
+  {
+    name: 'global::webpOptimizer',
+    config: {},  // Config parametreleri gerektiğinde buraya eklenebilir
+  },
 ];
