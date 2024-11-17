@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_arena_event_arenas",
+  "info": {
+    "displayName": "EventArena",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ArenaMode": {
+      "displayName": "Mode",
+      "type": "component",
+      "repeatable": true,
+      "component": "modes.mode"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

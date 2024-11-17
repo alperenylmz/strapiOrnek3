@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_arena_brn_arenas",
+  "info": {
+    "displayName": "BRN Arena",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "ArenaImages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

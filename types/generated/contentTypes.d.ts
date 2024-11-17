@@ -887,6 +887,34 @@ export interface ApiBlogPostBlogPost extends Schema.CollectionType {
   };
 }
 
+export interface ApiHeroHero extends Schema.CollectionType {
+  collectionName: 'heroes';
+  info: {
+    singularName: 'hero';
+    pluralName: 'heroes';
+    displayName: 'Hero';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Name: Attribute.String;
+    Description: Attribute.Text;
+    Role: Attribute.Enumeration<['support', 'tank', 'warrior', 'marksman']> &
+      Attribute.Required;
+    Abilities: Attribute.Component<'hero.hero-abilities', true>;
+    HeroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::hero.hero', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -952,6 +980,31 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
   };
 }
 
+export interface ApiMapMap extends Schema.SingleType {
+  collectionName: 'maps';
+  info: {
+    singularName: 'map';
+    pluralName: 'maps';
+    displayName: 'Map';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    EventArena: Attribute.Component<'arena.event-arena'>;
+    BossArena: Attribute.Component<'arena.boss-arena'>;
+    BrnArena: Attribute.Component<'arena.brn-arena'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::map.map', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPatchNotePatchNote extends Schema.CollectionType {
   collectionName: 'patch_notes';
   info: {
@@ -967,10 +1020,10 @@ export interface ApiPatchNotePatchNote extends Schema.CollectionType {
     Title: Attribute.String;
     slug: Attribute.UID<'api::patch-note.patch-note', 'Title'> &
       Attribute.Required;
-    Description: Attribute.Blocks;
     miniDescription: Attribute.Text;
     coverImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     Seo: Attribute.Component<'shared.seo'>;
+    Description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1181,8 +1234,10 @@ declare module '@strapi/types' {
       'api::actual-token.actual-token': ApiActualTokenActualToken;
       'api::blog.blog': ApiBlogBlog;
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
+      'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::map.map': ApiMapMap;
       'api::patch-note.patch-note': ApiPatchNotePatchNote;
       'api::roadmap.roadmap': ApiRoadmapRoadmap;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;

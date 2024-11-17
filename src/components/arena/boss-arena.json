@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_arena_boss_arenas",
+  "info": {
+    "displayName": "Boss Arena",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ArenaMode": {
+      "type": "component",
+      "repeatable": true,
+      "component": "modes.mode"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}
