@@ -1042,6 +1042,32 @@ export interface ApiPatchNotePatchNote extends Schema.CollectionType {
   };
 }
 
+export interface ApiPetPet extends Schema.CollectionType {
+  collectionName: 'pets';
+  info: {
+    singularName: 'pet';
+    pluralName: 'pets';
+    displayName: 'Pet';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    PetName: Attribute.String;
+    PetIcon: Attribute.Media<'images' | 'videos' | 'audios' | 'files'>;
+    PetHP: Attribute.BigInteger;
+    Gif: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::pet.pet', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::pet.pet', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRoadmapRoadmap extends Schema.SingleType {
   collectionName: 'roadmaps';
   info: {
@@ -1239,6 +1265,7 @@ declare module '@strapi/types' {
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::map.map': ApiMapMap;
       'api::patch-note.patch-note': ApiPatchNotePatchNote;
+      'api::pet.pet': ApiPetPet;
       'api::roadmap.roadmap': ApiRoadmapRoadmap;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
       'api::team.team': ApiTeamTeam;

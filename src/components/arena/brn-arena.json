@@ -9,18 +9,10 @@
     "Title": {
       "type": "string"
     },
-    "Description": {
-      "type": "text"
-    },
-    "ArenaImages": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "ArenaMode": {
+      "type": "component",
+      "repeatable": true,
+      "component": "modes.mode"
     }
   }
 }
