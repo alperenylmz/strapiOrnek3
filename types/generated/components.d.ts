@@ -75,28 +75,17 @@ export interface StrategicSectionStrategicBlock extends Schema.Component {
   };
 }
 
-export interface RoadmapOverTheYearsRoadmapOverTheYears
-  extends Schema.Component {
-  collectionName: 'components_roadmap_over_the_years_roadmap_over_the_years';
+export interface SocialHandlesSocialHandles extends Schema.Component {
+  collectionName: 'components_social_handles_social_handles';
   info: {
-    displayName: 'RoadmapOverTheYears';
+    displayName: 'SocialHandles';
     description: '';
   };
   attributes: {
-    Year: Attribute.BigInteger;
-    List: Attribute.Component<'roadmap-list.list-view', true>;
-  };
-}
-
-export interface RoadmapListListView extends Schema.Component {
-  collectionName: 'components_roadmap_list_list_views';
-  info: {
-    displayName: 'ListView';
-    description: '';
-  };
-  attributes: {
-    Quarter: Attribute.Integer;
-    List: Attribute.Component<'repeatable-text.list-view', true>;
+    name: Attribute.String;
+    url: Attribute.String;
+    Icon: Attribute.Media<'images' | 'files' | 'audios' | 'videos'>;
+    Followers: Attribute.String;
   };
 }
 
@@ -122,6 +111,56 @@ export interface SharedSeo extends Schema.Component {
     metaDescription: Attribute.String;
     SharedImage: Attribute.Component<'shared.share-image'>;
     keywords: Attribute.String;
+  };
+}
+
+export interface RoadmapOverTheYearsRoadmapOverTheYears
+  extends Schema.Component {
+  collectionName: 'components_roadmap_over_the_years_roadmap_over_the_years';
+  info: {
+    displayName: 'RoadmapOverTheYears';
+    description: '';
+  };
+  attributes: {
+    Year: Attribute.BigInteger;
+    List: Attribute.Component<'roadmap-list.list-view', true>;
+  };
+}
+
+export interface RoadmapListListView extends Schema.Component {
+  collectionName: 'components_roadmap_list_list_views';
+  info: {
+    displayName: 'ListView';
+    description: '';
+  };
+  attributes: {
+    Quarter: Attribute.Integer;
+    List: Attribute.Component<'repeatable-text.list-view', true>;
+  };
+}
+
+export interface RepeatableTextListView extends Schema.Component {
+  collectionName: 'components_repeatable_text_list_views';
+  info: {
+    displayName: 'ListView';
+  };
+  attributes: {
+    Substances: Attribute.Text;
+    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
+export interface ProjectsProjects extends Schema.Component {
+  collectionName: 'components_projects_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Tags: Attribute.String;
+    Link: Attribute.String;
   };
 }
 
@@ -153,31 +192,29 @@ export interface PartnerSectionOurPartnersBlock extends Schema.Component {
   };
 }
 
-export interface SocialHandlesSocialHandles extends Schema.Component {
-  collectionName: 'components_social_handles_social_handles';
+export interface OrnekComponentOrnekcomponent extends Schema.Component {
+  collectionName: 'components_ornek_component_ornekcomponents';
   info: {
-    displayName: 'SocialHandles';
-    description: '';
+    displayName: 'ORNEKCOMPONENT';
   };
   attributes: {
-    name: Attribute.String;
-    url: Attribute.String;
-    Icon: Attribute.Media<'images' | 'files' | 'audios' | 'videos'>;
-    Followers: Attribute.String;
+    alperen: Attribute.String;
   };
 }
 
-export interface ProjectsProjects extends Schema.Component {
-  collectionName: 'components_projects_projects';
+export interface OrnekComponentOrnekComponent extends Schema.Component {
+  collectionName: 'components_ornek_component_ornek_components';
   info: {
-    displayName: 'projects';
+    displayName: 'ORNEK COMPONENT';
   };
   attributes: {
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Tags: Attribute.String;
-    Link: Attribute.String;
+    ORNEK: Attribute.Component<'ornek-component.ornekcomponent', true> &
+      Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
   };
 }
 
@@ -194,25 +231,16 @@ export interface ModesMode extends Schema.Component {
   };
 }
 
-export interface RepeatableTextListView extends Schema.Component {
-  collectionName: 'components_repeatable_text_list_views';
+export interface ListedonListedOn extends Schema.Component {
+  collectionName: 'components_listedon_listed_ons';
   info: {
-    displayName: 'ListView';
-  };
-  attributes: {
-    Substances: Attribute.Text;
-    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface CoinSitesCoinSites extends Schema.Component {
-  collectionName: 'components_coin_sites_coin_sites';
-  info: {
-    displayName: 'coinSites';
+    displayName: 'ListedOn';
     description: '';
   };
   attributes: {
-    coinPlaces: Attribute.Media<'images'>;
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Description: Attribute.Text;
+    url: Attribute.String;
   };
 }
 
@@ -227,6 +255,27 @@ export interface HeroHeroAbilities extends Schema.Component {
     Description: Attribute.Text;
     SkillVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     SkillLogo: Attribute.Media<'images'>;
+  };
+}
+
+export interface FooterFooter extends Schema.Component {
+  collectionName: 'components_footer_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
+  };
+}
+
+export interface CoinSitesCoinSites extends Schema.Component {
+  collectionName: 'components_coin_sites_coin_sites';
+  info: {
+    displayName: 'coinSites';
+    description: '';
+  };
+  attributes: {
+    coinPlaces: Attribute.Media<'images'>;
   };
 }
 
@@ -255,16 +304,16 @@ export interface CoinCodeBlockCoinCodeBlock extends Schema.Component {
   };
 }
 
-export interface ListedonListedOn extends Schema.Component {
-  collectionName: 'components_listedon_listed_ons';
+export interface ChartPercentagesChartColorPercentages
+  extends Schema.Component {
+  collectionName: 'components_chart_percentages_chart_color_percentages';
   info: {
-    displayName: 'ListedOn';
-    description: '';
+    displayName: 'ChartColorPercentages';
   };
   attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Text;
-    url: Attribute.String;
+    Color: Attribute.String;
+    PercentageTitle: Attribute.String;
+    Percentage: Attribute.Integer;
   };
 }
 
@@ -284,16 +333,6 @@ export interface BlogPostsBlogPosts extends Schema.Component {
   };
 }
 
-export interface FooterFooter extends Schema.Component {
-  collectionName: 'components_footer_footers';
-  info: {
-    displayName: 'Footer';
-  };
-  attributes: {
-    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
-  };
-}
-
 export interface BackgroundGifBackgroundVideo extends Schema.Component {
   collectionName: 'components_background_gif_background_videos';
   info: {
@@ -301,6 +340,21 @@ export interface BackgroundGifBackgroundVideo extends Schema.Component {
   };
   attributes: {
     brnBackgroundGif: Attribute.Media<'videos'>;
+  };
+}
+
+export interface AboutSectionAboutSection extends Schema.Component {
+  collectionName: 'components_about_section_about_sections';
+  info: {
+    displayName: 'About Section';
+  };
+  attributes: {
+    CoinSites: Attribute.Component<'coin-sites.coin-sites', true>;
+    Title: Attribute.String;
+    Description: Attribute.Blocks;
+    TotalSupply: Attribute.Integer;
+    MaxSupply: Attribute.Integer;
+    LineGraph: Attribute.Media<'images'>;
   };
 }
 
@@ -340,34 +394,6 @@ export interface ArenaBossArena extends Schema.Component {
   };
 }
 
-export interface AboutSectionAboutSection extends Schema.Component {
-  collectionName: 'components_about_section_about_sections';
-  info: {
-    displayName: 'About Section';
-  };
-  attributes: {
-    CoinSites: Attribute.Component<'coin-sites.coin-sites', true>;
-    Title: Attribute.String;
-    Description: Attribute.Blocks;
-    TotalSupply: Attribute.Integer;
-    MaxSupply: Attribute.Integer;
-    LineGraph: Attribute.Media<'images'>;
-  };
-}
-
-export interface ChartPercentagesChartColorPercentages
-  extends Schema.Component {
-  collectionName: 'components_chart_percentages_chart_color_percentages';
-  info: {
-    displayName: 'ChartColorPercentages';
-  };
-  attributes: {
-    Color: Attribute.String;
-    PercentageTitle: Attribute.String;
-    Percentage: Attribute.Integer;
-  };
-}
-
 export interface BlogDetailsImageText extends Schema.Component {
   collectionName: 'components_blog_details_image_texts';
   info: {
@@ -398,29 +424,31 @@ declare module '@strapi/types' {
       'team-blocks.team-blocks': TeamBlocksTeamBlocks;
       'strategic-section.strategic-section': StrategicSectionStrategicSection;
       'strategic-section.strategic-block': StrategicSectionStrategicBlock;
-      'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
-      'roadmap-list.list-view': RoadmapListListView;
+      'social-handles.social-handles': SocialHandlesSocialHandles;
       'shared.share-image': SharedShareImage;
       'shared.seo': SharedSeo;
+      'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
+      'roadmap-list.list-view': RoadmapListListView;
+      'repeatable-text.list-view': RepeatableTextListView;
+      'projects.projects': ProjectsProjects;
       'partner-section.partner-section': PartnerSectionPartnerSection;
       'partner-section.our-partners-block': PartnerSectionOurPartnersBlock;
-      'social-handles.social-handles': SocialHandlesSocialHandles;
-      'projects.projects': ProjectsProjects;
+      'ornek-component.ornekcomponent': OrnekComponentOrnekcomponent;
+      'ornek-component.ornek-component': OrnekComponentOrnekComponent;
       'modes.mode': ModesMode;
-      'repeatable-text.list-view': RepeatableTextListView;
-      'coin-sites.coin-sites': CoinSitesCoinSites;
+      'listedon.listed-on': ListedonListedOn;
       'hero.hero-abilities': HeroHeroAbilities;
+      'footer.footer': FooterFooter;
+      'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
-      'listedon.listed-on': ListedonListedOn;
+      'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
       'blog-posts.blog-posts': BlogPostsBlogPosts;
-      'footer.footer': FooterFooter;
       'background-gif.background-video': BackgroundGifBackgroundVideo;
+      'about-section.about-section': AboutSectionAboutSection;
       'arena.event-arena': ArenaEventArena;
       'arena.brn-arena': ArenaBrnArena;
       'arena.boss-arena': ArenaBossArena;
-      'about-section.about-section': AboutSectionAboutSection;
-      'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
       'blog-details.image-text': BlogDetailsImageText;
       'blog-details.blog-detail': BlogDetailsBlogDetail;
     }

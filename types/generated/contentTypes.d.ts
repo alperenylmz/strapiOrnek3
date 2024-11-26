@@ -905,6 +905,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
       Attribute.Required;
     Abilities: Attribute.Component<'hero.hero-abilities', true>;
     HeroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    heroGlb: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

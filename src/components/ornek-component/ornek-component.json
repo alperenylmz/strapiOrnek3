@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ornek_component_ornek_components",
+  "info": {
+    "displayName": "ORNEK COMPONENT"
+  },
+  "options": {},
+  "attributes": {
+    "ORNEK": {
+      "displayName": "ORNEKCOMPONENT",
+      "type": "component",
+      "repeatable": true,
+      "component": "ornek-component.ornekcomponent",
+      "max": 2
+    }
+  }
+}

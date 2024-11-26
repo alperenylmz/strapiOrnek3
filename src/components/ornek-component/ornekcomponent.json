@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_ornek_component_ornekcomponents",
+  "info": {
+    "displayName": "ORNEKCOMPONENT"
+  },
+  "options": {},
+  "attributes": {
+    "alperen": {
+      "type": "string"
+    }
+  }
+}
