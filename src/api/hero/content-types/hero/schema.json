@@ -21,10 +21,10 @@
     "Role": {
       "type": "enumeration",
       "enum": [
-        "support",
-        "tank",
-        "warrior",
-        "marksman"
+        "Support",
+        "Tank",
+        "Warrior",
+        "Marksman"
       ],
       "required": true
     },
@@ -46,14 +46,15 @@
       ]
     },
     "heroGlb": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

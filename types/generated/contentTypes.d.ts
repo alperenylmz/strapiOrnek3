@@ -901,7 +901,7 @@ export interface ApiHeroHero extends Schema.CollectionType {
   attributes: {
     Name: Attribute.String;
     Description: Attribute.Text;
-    Role: Attribute.Enumeration<['support', 'tank', 'warrior', 'marksman']> &
+    Role: Attribute.Enumeration<['Support', 'Tank', 'Warrior', 'Marksman']> &
       Attribute.Required;
     Abilities: Attribute.Component<'hero.hero-abilities', true>;
     HeroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -943,40 +943,6 @@ export interface ApiHomeHome extends Schema.SingleType {
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHomePageHomePage extends Schema.SingleType {
-  collectionName: 'home_pages';
-  info: {
-    singularName: 'home-page';
-    pluralName: 'home-pages';
-    displayName: 'Home Page';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    brnBackgroundGif: Attribute.Component<'background-gif.background-video'>;
-    about: Attribute.Component<'about-section.about-section'>;
-    StrategicSection: Attribute.Component<'strategic-section.strategic-section'>;
-    PartnerSection: Attribute.Component<'partner-section.partner-section'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page.home-page',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1057,50 +1023,19 @@ export interface ApiPetPet extends Schema.CollectionType {
   attributes: {
     PetName: Attribute.String;
     PetIcon: Attribute.Media<'images' | 'videos' | 'audios' | 'files'>;
-    PetHP: Attribute.BigInteger;
+    PetHP: Attribute.Float;
     Gif: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    role: Attribute.Enumeration<['Tank', 'Damage']>;
+    Description: Attribute.Text;
+    AutoAttackDamage: Attribute.Integer;
+    SkillDamage: Attribute.String;
+    SkillEffect: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::pet.pet', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::pet.pet', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRoadmapRoadmap extends Schema.SingleType {
-  collectionName: 'roadmaps';
-  info: {
-    singularName: 'roadmap';
-    pluralName: 'roadmaps';
-    displayName: 'Roadmap';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    RoadmapTitle: Attribute.String;
-    RoadmapDescription: Attribute.Text;
-    OverTheYears: Attribute.Component<
-      'roadmap-over-the-years.roadmap-over-the-years',
-      true
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::roadmap.roadmap',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::roadmap.roadmap',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1129,68 +1064,6 @@ export interface ApiSubscriberSubscriber extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::subscriber.subscriber',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTeamTeam extends Schema.SingleType {
-  collectionName: 'teams';
-  info: {
-    singularName: 'team';
-    pluralName: 'teams';
-    displayName: 'Team';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Blocks;
-    TeamBlocks: Attribute.Component<'team-blocks.team-blocks', true>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::team.team', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiTokenToken extends Schema.SingleType {
-  collectionName: 'tokens';
-  info: {
-    singularName: 'token';
-    pluralName: 'tokens';
-    displayName: 'Token';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    TotalSupply: Attribute.Decimal;
-    MaxSupply: Attribute.Decimal;
-    LineGraph: Attribute.Media<'images'>;
-    CoinCode: Attribute.Component<'coin-code-block.coin-code-block'>;
-    ChartSection: Attribute.Component<'token-section.token-chart-section'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::token.token',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::token.token',
       'oneToOne',
       'admin::user'
     > &
@@ -1263,14 +1136,10 @@ declare module '@strapi/types' {
       'api::blog-post.blog-post': ApiBlogPostBlogPost;
       'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
-      'api::home-page.home-page': ApiHomePageHomePage;
       'api::map.map': ApiMapMap;
       'api::patch-note.patch-note': ApiPatchNotePatchNote;
       'api::pet.pet': ApiPetPet;
-      'api::roadmap.roadmap': ApiRoadmapRoadmap;
       'api::subscriber.subscriber': ApiSubscriberSubscriber;
-      'api::team.team': ApiTeamTeam;
-      'api::token.token': ApiTokenToken;
       'api::token-allocation.token-allocation': ApiTokenAllocationTokenAllocation;
     }
   }

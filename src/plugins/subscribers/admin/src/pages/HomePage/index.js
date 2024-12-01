@@ -14,33 +14,111 @@ const HomePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [emailContent, setEmailContent] = useState("");
 
+  const fetchImageUrl = async (imageId) => {
+    const response = await fetch(`http://localhost:1337/api/upload/files/${imageId}`);
+    const image = await response.json();
+    return image.url;
+  };
+  
+  
+
+  const renderEmailTemplate = (content, recipientName) => {
+    const headerImageUrl = fetchImageUrl("129"); // Görsel dosya adını buraya yazın
+  
+    return `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+          }
+          .email-container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          }
+          .email-header {
+            background-color: #000138;
+            padding: 10px 20px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+          }
+          .email-header img {
+            max-width: 100%; /* Görselin konteyner boyutunu aşmasını engeller */
+            height: auto;
+          }
+          .email-body {
+            padding: 20px;
+            font-size: 16px;
+            color: #333333;
+          }
+          .email-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #888888;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="email-container">
+          <div class="email-header">
+            <img src="${headerImageUrl}" alt="Header Image" />
+          </div>
+          <div class="email-body">
+            <p>Merhaba, ${recipientName || "Değerli Kullanıcı"}!</p>
+            <p>${content}</p>
+          </div>
+          <div class="email-footer">
+            <p>Bu e-posta otomatik olarak gönderilmiştir.</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+  };
+  
+  
+
   const sendBulkEmail = async () => {
     console.log("Sending emails to:", selectedUsers);
+  
     try {
-      const response = await fetch("/api/email/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          bcc: selectedUsers,
-          subject: "Custom Email", // Add custom subject if needed
-          html: emailContent, // Use the content from the rich text editor
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to send bulk emails");
+      for (const email of selectedUsers) {
+        const renderedHtml = renderEmailTemplate(emailContent, email);
+  
+        const response = await fetch("/api/email/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            to: email,
+            subject: "Özel Şablonlu E-posta",
+            html: renderedHtml,
+          }),
+        });
+  
+        if (!response.ok) {
+          console.error(`E-posta gönderimi başarısız oldu: ${email}`);
+        }
       }
-
-      const result = await response.json();
+  
       alert("Toplu e-postalar başarıyla gönderildi!");
-      setIsModalOpen(false); // Close modal after sending email
+      setIsModalOpen(false);
     } catch (error) {
-      console.error("Failed to send bulk emails:", error);
-      alert("Toplu e-posta gönderme işlemi başarısız oldu.");
+      console.error("Toplu e-posta gönderimi sırasında bir hata oluştu:", error);
+      alert("Toplu e-posta gönderimi başarısız oldu.");
     }
   };
+  
 
   const fetchSubscribers = async (page = 1) => {
     try {

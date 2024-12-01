@@ -27,17 +27,37 @@
       ]
     },
     "PetHP": {
-      "type": "biginteger"
+      "type": "float"
     },
     "Gif": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "Tank",
+        "Damage"
+      ]
+    },
+    "Description": {
+      "type": "text"
+    },
+    "AutoAttackDamage": {
+      "type": "integer"
+    },
+    "SkillDamage": {
+      "type": "string"
+    },
+    "SkillEffect": {
+      "type": "text"
     }
   }
 }

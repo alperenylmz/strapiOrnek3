@@ -6,12 +6,15 @@
   },
   "options": {},
   "attributes": {
-    "ModeImages": {
+    "ModeImage": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images"
+        "images",
+        "videos",
+        "audios",
+        "files"
       ]
     },
     "ModeDescription": {

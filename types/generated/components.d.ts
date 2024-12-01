@@ -1,5 +1,32 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface TeamBlocksTeamBlocks extends Schema.Component {
+  collectionName: 'components_team_blocks_team_blocks';
+  info: {
+    displayName: 'TeamBlocks';
+    description: '';
+  };
+  attributes: {
+    Photo: Attribute.Media<'images'>;
+    NameSurname: Attribute.Text;
+    Position: Attribute.Text;
+    url: Attribute.String;
+  };
+}
+
+export interface TokenBlocksTokenChartBlocks extends Schema.Component {
+  collectionName: 'components_token_blocks_token_chart_blocks';
+  info: {
+    displayName: 'TokenChartBlocks';
+    description: '';
+  };
+  attributes: {
+    Number: Attribute.String;
+    Change: Attribute.String;
+    Title: Attribute.String;
+  };
+}
+
 export interface TokenSectionTokenChartSection extends Schema.Component {
   collectionName: 'components_token_section_token_chart_sections';
   info: {
@@ -17,33 +44,6 @@ export interface TokenSectionTokenChartSection extends Schema.Component {
       'chart-percentages.chart-color-percentages',
       true
     >;
-  };
-}
-
-export interface TokenBlocksTokenChartBlocks extends Schema.Component {
-  collectionName: 'components_token_blocks_token_chart_blocks';
-  info: {
-    displayName: 'TokenChartBlocks';
-    description: '';
-  };
-  attributes: {
-    Number: Attribute.String;
-    Change: Attribute.String;
-    Title: Attribute.String;
-  };
-}
-
-export interface TeamBlocksTeamBlocks extends Schema.Component {
-  collectionName: 'components_team_blocks_team_blocks';
-  info: {
-    displayName: 'TeamBlocks';
-    description: '';
-  };
-  attributes: {
-    Photo: Attribute.Media<'images'>;
-    NameSurname: Attribute.Text;
-    Position: Attribute.Text;
-    url: Attribute.String;
   };
 }
 
@@ -89,28 +89,15 @@ export interface SocialHandlesSocialHandles extends Schema.Component {
   };
 }
 
-export interface SharedShareImage extends Schema.Component {
-  collectionName: 'components_shared_share_images';
+export interface RoadmapListListView extends Schema.Component {
+  collectionName: 'components_roadmap_list_list_views';
   info: {
-    displayName: 'shareImage';
-  };
-  attributes: {
-    alt: Attribute.String;
-    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-  };
-}
-
-export interface SharedSeo extends Schema.Component {
-  collectionName: 'components_shared_seos';
-  info: {
-    displayName: 'Seo';
+    displayName: 'ListView';
     description: '';
   };
   attributes: {
-    metaTitle: Attribute.String;
-    metaDescription: Attribute.String;
-    SharedImage: Attribute.Component<'shared.share-image'>;
-    keywords: Attribute.String;
+    Quarter: Attribute.Integer;
+    List: Attribute.Component<'repeatable-text.list-view', true>;
   };
 }
 
@@ -124,43 +111,6 @@ export interface RoadmapOverTheYearsRoadmapOverTheYears
   attributes: {
     Year: Attribute.BigInteger;
     List: Attribute.Component<'roadmap-list.list-view', true>;
-  };
-}
-
-export interface RoadmapListListView extends Schema.Component {
-  collectionName: 'components_roadmap_list_list_views';
-  info: {
-    displayName: 'ListView';
-    description: '';
-  };
-  attributes: {
-    Quarter: Attribute.Integer;
-    List: Attribute.Component<'repeatable-text.list-view', true>;
-  };
-}
-
-export interface RepeatableTextListView extends Schema.Component {
-  collectionName: 'components_repeatable_text_list_views';
-  info: {
-    displayName: 'ListView';
-  };
-  attributes: {
-    Substances: Attribute.Text;
-    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
-  };
-}
-
-export interface ProjectsProjects extends Schema.Component {
-  collectionName: 'components_projects_projects';
-  info: {
-    displayName: 'projects';
-  };
-  attributes: {
-    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    Tags: Attribute.String;
-    Link: Attribute.String;
   };
 }
 
@@ -192,6 +142,44 @@ export interface PartnerSectionOurPartnersBlock extends Schema.Component {
   };
 }
 
+export interface ProjectsProjects extends Schema.Component {
+  collectionName: 'components_projects_projects';
+  info: {
+    displayName: 'projects';
+  };
+  attributes: {
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Tags: Attribute.String;
+    Link: Attribute.String;
+  };
+}
+
+export interface ModesMode extends Schema.Component {
+  collectionName: 'components_modes_modes';
+  info: {
+    displayName: 'Mode';
+    description: '';
+  };
+  attributes: {
+    ModeImage: Attribute.Media<'images' | 'videos' | 'audios' | 'files'>;
+    ModeDescription: Attribute.Text;
+    Title: Attribute.String;
+  };
+}
+
+export interface RepeatableTextListView extends Schema.Component {
+  collectionName: 'components_repeatable_text_list_views';
+  info: {
+    displayName: 'ListView';
+  };
+  attributes: {
+    Substances: Attribute.Text;
+    isDone: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface OrnekComponentOrnekcomponent extends Schema.Component {
   collectionName: 'components_ornek_component_ornekcomponents';
   info: {
@@ -218,53 +206,28 @@ export interface OrnekComponentOrnekComponent extends Schema.Component {
   };
 }
 
-export interface ModesMode extends Schema.Component {
-  collectionName: 'components_modes_modes';
+export interface SharedShareImage extends Schema.Component {
+  collectionName: 'components_shared_share_images';
   info: {
-    displayName: 'Mode';
-    description: '';
+    displayName: 'shareImage';
   };
   attributes: {
-    ModeImages: Attribute.Media<'images', true>;
-    ModeDescription: Attribute.Text;
-    Title: Attribute.String;
+    alt: Attribute.String;
+    media: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
-export interface ListedonListedOn extends Schema.Component {
-  collectionName: 'components_listedon_listed_ons';
+export interface SharedSeo extends Schema.Component {
+  collectionName: 'components_shared_seos';
   info: {
-    displayName: 'ListedOn';
+    displayName: 'Seo';
     description: '';
   };
   attributes: {
-    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Description: Attribute.Text;
-    url: Attribute.String;
-  };
-}
-
-export interface HeroHeroAbilities extends Schema.Component {
-  collectionName: 'components_hero_hero_abilities_s';
-  info: {
-    displayName: 'Hero Abilities ';
-    description: '';
-  };
-  attributes: {
-    Title: Attribute.String;
-    Description: Attribute.Text;
-    SkillVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    SkillLogo: Attribute.Media<'images'>;
-  };
-}
-
-export interface FooterFooter extends Schema.Component {
-  collectionName: 'components_footer_footers';
-  info: {
-    displayName: 'Footer';
-  };
-  attributes: {
-    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
+    metaTitle: Attribute.String;
+    metaDescription: Attribute.String;
+    SharedImage: Attribute.Component<'shared.share-image'>;
+    keywords: Attribute.String;
   };
 }
 
@@ -289,6 +252,20 @@ export interface CoinPlaceLinkCoinPlaceLinks extends Schema.Component {
     PlaceImage: Attribute.Media<'images'>;
     url: Attribute.Text;
     name: Attribute.String;
+  };
+}
+
+export interface HeroHeroAbilities extends Schema.Component {
+  collectionName: 'components_hero_hero_abilities_s';
+  info: {
+    displayName: 'Hero Abilities ';
+    description: '';
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    SkillVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    SkillLogo: Attribute.Media<'images'>;
   };
 }
 
@@ -333,6 +310,16 @@ export interface BlogPostsBlogPosts extends Schema.Component {
   };
 }
 
+export interface FooterFooter extends Schema.Component {
+  collectionName: 'components_footer_footers';
+  info: {
+    displayName: 'Footer';
+  };
+  attributes: {
+    AvailableOn: Attribute.Component<'coin-place-link.coin-place-links', true>;
+  };
+}
+
 export interface BackgroundGifBackgroundVideo extends Schema.Component {
   collectionName: 'components_background_gif_background_videos';
   info: {
@@ -340,21 +327,6 @@ export interface BackgroundGifBackgroundVideo extends Schema.Component {
   };
   attributes: {
     brnBackgroundGif: Attribute.Media<'videos'>;
-  };
-}
-
-export interface AboutSectionAboutSection extends Schema.Component {
-  collectionName: 'components_about_section_about_sections';
-  info: {
-    displayName: 'About Section';
-  };
-  attributes: {
-    CoinSites: Attribute.Component<'coin-sites.coin-sites', true>;
-    Title: Attribute.String;
-    Description: Attribute.Blocks;
-    TotalSupply: Attribute.Integer;
-    MaxSupply: Attribute.Integer;
-    LineGraph: Attribute.Media<'images'>;
   };
 }
 
@@ -394,6 +366,34 @@ export interface ArenaBossArena extends Schema.Component {
   };
 }
 
+export interface AboutSectionAboutSection extends Schema.Component {
+  collectionName: 'components_about_section_about_sections';
+  info: {
+    displayName: 'About Section';
+  };
+  attributes: {
+    CoinSites: Attribute.Component<'coin-sites.coin-sites', true>;
+    Title: Attribute.String;
+    Description: Attribute.Blocks;
+    TotalSupply: Attribute.Integer;
+    MaxSupply: Attribute.Integer;
+    LineGraph: Attribute.Media<'images'>;
+  };
+}
+
+export interface ListedonListedOn extends Schema.Component {
+  collectionName: 'components_listedon_listed_ons';
+  info: {
+    displayName: 'ListedOn';
+    description: '';
+  };
+  attributes: {
+    Image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Description: Attribute.Text;
+    url: Attribute.String;
+  };
+}
+
 export interface BlogDetailsImageText extends Schema.Component {
   collectionName: 'components_blog_details_image_texts';
   info: {
@@ -419,36 +419,36 @@ export interface BlogDetailsBlogDetail extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'token-section.token-chart-section': TokenSectionTokenChartSection;
-      'token-blocks.token-chart-blocks': TokenBlocksTokenChartBlocks;
       'team-blocks.team-blocks': TeamBlocksTeamBlocks;
+      'token-blocks.token-chart-blocks': TokenBlocksTokenChartBlocks;
+      'token-section.token-chart-section': TokenSectionTokenChartSection;
       'strategic-section.strategic-section': StrategicSectionStrategicSection;
       'strategic-section.strategic-block': StrategicSectionStrategicBlock;
       'social-handles.social-handles': SocialHandlesSocialHandles;
-      'shared.share-image': SharedShareImage;
-      'shared.seo': SharedSeo;
-      'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
       'roadmap-list.list-view': RoadmapListListView;
-      'repeatable-text.list-view': RepeatableTextListView;
-      'projects.projects': ProjectsProjects;
+      'roadmap-over-the-years.roadmap-over-the-years': RoadmapOverTheYearsRoadmapOverTheYears;
       'partner-section.partner-section': PartnerSectionPartnerSection;
       'partner-section.our-partners-block': PartnerSectionOurPartnersBlock;
+      'projects.projects': ProjectsProjects;
+      'modes.mode': ModesMode;
+      'repeatable-text.list-view': RepeatableTextListView;
       'ornek-component.ornekcomponent': OrnekComponentOrnekcomponent;
       'ornek-component.ornek-component': OrnekComponentOrnekComponent;
-      'modes.mode': ModesMode;
-      'listedon.listed-on': ListedonListedOn;
-      'hero.hero-abilities': HeroHeroAbilities;
-      'footer.footer': FooterFooter;
+      'shared.share-image': SharedShareImage;
+      'shared.seo': SharedSeo;
       'coin-sites.coin-sites': CoinSitesCoinSites;
       'coin-place-link.coin-place-links': CoinPlaceLinkCoinPlaceLinks;
+      'hero.hero-abilities': HeroHeroAbilities;
       'coin-code-block.coin-code-block': CoinCodeBlockCoinCodeBlock;
       'chart-percentages.chart-color-percentages': ChartPercentagesChartColorPercentages;
       'blog-posts.blog-posts': BlogPostsBlogPosts;
+      'footer.footer': FooterFooter;
       'background-gif.background-video': BackgroundGifBackgroundVideo;
-      'about-section.about-section': AboutSectionAboutSection;
       'arena.event-arena': ArenaEventArena;
       'arena.brn-arena': ArenaBrnArena;
       'arena.boss-arena': ArenaBossArena;
+      'about-section.about-section': AboutSectionAboutSection;
+      'listedon.listed-on': ListedonListedOn;
       'blog-details.image-text': BlogDetailsImageText;
       'blog-details.blog-detail': BlogDetailsBlogDetail;
     }
