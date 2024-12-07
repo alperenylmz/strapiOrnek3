@@ -34,7 +34,7 @@
       "repeatable": true,
       "component": "hero.hero-abilities"
     },
-    "HeroImage": {
+    "BannerVideo": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -55,6 +55,13 @@
         "videos",
         "audios"
       ]
+    },
+    "HeroImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

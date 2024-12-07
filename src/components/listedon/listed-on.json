@@ -17,9 +17,6 @@
         "audios"
       ]
     },
-    "Description": {
-      "type": "text"
-    },
     "url": {
       "type": "string"
     }

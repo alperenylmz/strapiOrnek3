@@ -904,8 +904,9 @@ export interface ApiHeroHero extends Schema.CollectionType {
     Role: Attribute.Enumeration<['Support', 'Tank', 'Warrior', 'Marksman']> &
       Attribute.Required;
     Abilities: Attribute.Component<'hero.hero-abilities', true>;
-    HeroImage: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    BannerVideo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     heroGlb: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    HeroImage: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
